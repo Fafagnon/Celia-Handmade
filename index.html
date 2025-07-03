@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celia Handmade - Vêtements Artisanaux en Lin et Batik à Lomé</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS Partagé et CSS de la Page -->
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.jpg" alt="Logo Celia Handmade" class="logo">
+            </a>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="products.html">Produits</a></li>
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#testimonials">Témoignages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-cart fa-lg"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>L’élégance au naturel, le style fait main.</h1>
+                <p>Chez Celia Handmade, chaque vêtement est une pièce unique façonnée avec soin, passion et créativité, célébrant la beauté des tissus naturels.</p>
+                <a href="products.html" class="btn btn-primary">Découvrir la Collection</a>
+            </div>
+        </section>
+
+        <!-- NOUVELLE SECTION CATEGORIES -->
+        <section class="categories" id="categories">
+            <h2 class="section-title">Nos Catégories</h2>
+            <div class="category-showcase">
+                <a href="products.html?category=femme" class="category-card">
+                    <img src="images/ensemble lin.jpeg" alt="Collection Femme">
+                    <div class="category-overlay"><h3>Femme</h3></div>
+                </a>
+                <a href="products.html?category=homme" class="category-card">
+                    <img src="images/chemise lin.webp" alt="Collection Homme">
+                    <div class="category-overlay"><h3>Homme</h3></div>
+                </a>
+                <a href="products.html?category=enfant" class="category-card">
+                    <img src="images/enfant.jpg" alt="Collection Enfant">
+                    <div class="category-overlay"><h3>Enfant</h3></div>
+                </a>
+                <a href="products.html?category=accessoires" class="category-card">
+                    <img src="images/sac à main.jpeg" alt="Collection Accessoires">
+                    <div class="category-overlay"><h3>Accessoires</h3></div>
+                </a>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="about-content">
+                <div class="about-img"><img src="images/boutique.jpeg" alt="L'atelier Celia Handmade"></div>
+                <div class="about-text">
+                    <h2 class="section-title">Notre Histoire</h2>
+                    <p>Fondée à Lomé en 2020, Celia Handmade est née d'une passion pour la mode durable et l'artisanat. Notre mission est de proposer des vêtements uniques et de qualité, conçus pour durer et raconter une histoire.</p>
+                    <p>Nous travaillons en étroite collaboration avec des artisans locaux, valorisant des savoir-faire uniques et des matières nobles comme le lin et le batik pour soutenir l'économie locale et réduire notre impact environnemental.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="testimonials" id="testimonials">
+            <h2 class="section-title">Ce que nos clients disent</h2>
+            <div class="testimonial-container">
+                <div class="testimonial-card">
+                    <p>"Une qualité incroyable et des finitions parfaites. Ma robe en lin est devenue ma pièce préférée ! Je recommande à 100%."</p>
+                    <span>- Aïcha K.</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Enfin une boutique qui propose des vêtements pour homme stylés et éthiques à Lomé. La chemise en batik est superbe."</p>
+                    <span>- David A.</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Le service client est adorable et la livraison a été très rapide. On sent la passion derrière chaque création. Bravo Celia Handmade !"</p>
+                    <span>- Fati L.</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2 class="section-title">Contactez-Nous</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Nos Coordonnées</h3>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <p>Hédzranawoé, près de la station Total, Lomé</p></div>
+                    <div class="contact-item"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/22893122283" target="_blank">+228 93 12 22 83</a></div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:contact@celiahandmade.com">contact@celiahandmade.com</a></div>
+                    <div class="contact-item"><i class="fab fa-tiktok"></i> <a href="https://www.tiktok.com/@celia_handmade" target="_blank">@celia_handmade</a></div>
+                    <h3>Heures d'Ouverture</h3>
+                    <p>Lundi - Vendredi: 9h00 - 18h00</p><p>Samedi: 10h00 - 16h00</p>
+                </div>
+                <div class="contact-form-container">
+                    <h3>Envoyez-nous un Message Direct</h3>
+                    <form id="contactForm">
+                        <div class="form-group"><input type="text" name="name" placeholder="Votre Nom" required></div>
+                        <div class="form-group"><input type="email" name="email" placeholder="Votre Email" required></div>
+                        <div class="form-group"><textarea name="message" placeholder="Votre Message" required></textarea></div>
+                        <button type="submit" class="btn btn-primary">Envoyer sur WhatsApp</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="year"></span> Celia Handmade. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Éléments partagés (Panier, Modal, etc.) -->
+    <div class="overlay" id="overlay"></div>
+    <div class="cart-container" id="cart">
+        <div class="cart-header"><h3>Votre Panier</h3><button class="close-cart" id="closeCart">×</button></div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total:</span><span id="cartTotal">0 FCFA</span></div>
+            <div class="cart-buttons">
+                <button class="btn-secondary" id="clearCart">Vider</button>
+                <button class="btn-primary" id="checkoutWhatsapp">Commander</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="productModal">
+        <div class="modal-content"><span class="close-modal" id="closeModal">×</span><div id="modalBody"></div></div>
+    </div>
+    <div id="toast"></div>
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+    
+    <!-- JS Partagé et JS de la Page -->
+    <script src="common.js"></script>
+    <script src="index.js"></script>    
+</body>
+</html>

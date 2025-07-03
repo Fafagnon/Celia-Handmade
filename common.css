@@ -1,0 +1,188 @@
+/* --- VARIABLES ET RESET (PARTAGÉS) --- */
+:root {
+    --primary-color: #4E2A1E; /* Marron profond du logo */
+    --accent-color: #D7257F;  /* Rose/Magenta des ongles du logo */
+    --light-color: #FDFBF8;   /* Un blanc cassé/beige très clair */
+    --dark-color: #333333;    /* Gris foncé pour le texte */
+    --grey-color: #e9e9e9;    /* Gris clair pour les bordures */
+    
+    --font-headings: 'Cormorant Garamond', serif;
+    --font-body: 'Poppins', sans-serif;
+    
+    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-body);
+    line-height: 1.7;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    overflow-x: hidden;
+}
+
+/* --- ÉLÉMENTS GÉNÉRAUX (PARTAGÉS) --- */
+h1, h2, h3 { font-family: var(--font-headings); color: var(--primary-color); font-weight: 700; }
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+.section-title::after {
+    content: ''; display: block; width: 60px; height: 3px;
+    background-color: var(--accent-color);
+    margin: 10px auto 0;
+}
+.btn {
+    display: inline-block; padding: 12px 28px; text-decoration: none;
+    border-radius: 50px; font-weight: 600; cursor: pointer;
+    transition: all 0.3s ease; border: 2px solid transparent;
+}
+.btn-primary { background-color: var(--accent-color); color: white; }
+.btn-primary:hover {
+    background-color: transparent; color: var(--accent-color);
+    border-color: var(--accent-color); transform: translateY(-3px);
+}
+.btn-secondary { background-color: var(--grey-color); color: var(--dark-color); }
+.btn-secondary:hover { background-color: var(--dark-color); color: white; }
+
+/* --- HEADER & NAVIGATION (PARTAGÉS) --- */
+header {
+    background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0;
+    z-index: 1000; width: 100%;
+}
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 1200px; margin: 0 auto; padding: 10px 20px;
+}
+.logo { height: 60px; }
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a {
+    text-decoration: none; color: var(--dark-color); font-weight: 400;
+    position: relative; padding-bottom: 5px;
+}
+.nav-links a::after {
+    content: ''; position: absolute; bottom: 0; left: 0; width: 0;
+    height: 2px; background-color: var(--accent-color); transition: width 0.3s ease;
+}
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.cart-icon { position: relative; cursor: pointer; color: var(--primary-color); }
+.cart-count {
+    position: absolute; top: -8px; right: -12px;
+    background-color: var(--accent-color); color: white; border-radius: 50%;
+    width: 22px; height: 22px; display: flex; justify-content: center;
+    align-items: center; font-size: 0.75rem; font-weight: 600;
+    border: 2px solid white;
+}
+.menu-toggle { display: none; /* S'affiche sur mobile */ }
+
+/* --- SHOPPING CART (PARTAGÉ) --- */
+.overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6); z-index: 1500;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.overlay.active { opacity: 1; visibility: visible; }
+.cart-container {
+    position: fixed; top: 0; right: -100%; width: 100%; max-width: 420px;
+    height: 100vh; background-color: white; box-shadow: var(--shadow);
+    z-index: 2000; transition: right 0.4s ease-in-out;
+    display: flex; flex-direction: column;
+}
+.cart-container.active { right: 0; }
+.cart-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 1.5rem; background-color: var(--primary-color); color: white;
+}
+.cart-header h3 { color: white; }
+.close-cart { background: none; border: none; color: white; font-size: 2rem; cursor: pointer; }
+.cart-items { flex: 1; overflow-y: auto; padding: 1.5rem; }
+.empty-cart { text-align: center; color: #999; margin-top: 2rem; }
+.cart-item {
+    display: flex; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--grey-color);
+}
+.cart-item-img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; }
+.cart-item-info { flex: 1; }
+.cart-item-title { font-size: 1rem; font-weight: 600; }
+.cart-item-price { color: var(--accent-color); font-weight: 600; }
+.cart-item-quantity { display: flex; align-items: center; margin-top: 0.5rem; }
+.quantity-btn {
+    background: var(--grey-color); border: none; width: 28px; height: 28px;
+    cursor: pointer; font-weight: bold; border-radius: 50%;
+}
+.quantity-input { width: 40px; text-align: center; border: none; font-weight: 600; }
+.remove-item { color: #999; background: none; border: none; cursor: pointer; transition: color 0.3s; }
+.remove-item:hover { color: var(--accent-color); }
+.cart-footer { padding: 1.5rem; border-top: 1px solid var(--grey-color); background-color: var(--light-color); }
+.cart-total { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 1rem; font-size: 1.2rem; }
+.cart-buttons { display: flex; gap: 1rem; }
+.cart-buttons .btn-primary, .cart-buttons .btn-secondary { flex: 1; text-align: center; }
+
+/* --- PRODUCT MODAL (PARTAGÉ) --- */
+.modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.7); z-index: 3000;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal.active { opacity: 1; visibility: visible; }
+.modal-content {
+    background: white; border-radius: 15px; padding: 2rem;
+    max-width: 800px; width: 90%; position: relative;
+    transform: scale(0.9); transition: transform 0.3s ease;
+}
+.modal.active .modal-content { transform: scale(1); }
+.close-modal { position: absolute; top: 15px; right: 20px; font-size: 2rem; cursor: pointer; color: #999; }
+#modalBody { display: flex; gap: 2rem; }
+#modalBody img { max-width: 40%; border-radius: 10px; }
+#modalBody .info { flex: 1; }
+#modalBody h3 { font-size: 2rem; }
+#modalBody p { margin: 1rem 0; }
+#modalBody .price { font-size: 1.5rem; font-weight: bold; color: var(--accent-color); margin-bottom: 1.5rem; }
+
+/* --- TOAST & FOOTER (PARTAGÉS) --- */
+#toast {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background-color: var(--dark-color); color: white; padding: 12px 25px;
+    border-radius: 25px; z-index: 4000; opacity: 0; visibility: hidden;
+    transition: opacity 0.3s, bottom 0.3s;
+}
+#toast.show { opacity: 1; visibility: visible; bottom: 30px; }
+footer {
+    background-color: var(--primary-color); color: var(--light-color);
+    padding: 1.5rem; text-align: center;
+}
+.back-to-top {
+    position: fixed; bottom: 20px; right: 20px; width: 45px; height: 45px;
+    background-color: var(--accent-color); color: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; font-size: 1.2rem; opacity: 0; visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+.back-to-top.visible { opacity: 1; visibility: visible; }
+.back-to-top:hover { transform: scale(1.1); }
+
+/* --- RESPONSIVE (PARTAGÉ) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; flex-direction: column; cursor: pointer; z-index: 1001;
+    }
+    .menu-toggle span {
+        width: 25px; height: 3px; background-color: var(--dark-color);
+        margin: 2px 0; transition: 0.4s;
+    }
+    .nav-links {
+        position: fixed; top: 0; left: -100%; width: 100%; height: 100vh;
+        background-color: white; flex-direction: column; align-items: center;
+        justify-content: center; transition: left 0.3s ease; gap: 2rem;
+    }
+    .nav-links.active { left: 0; }
+    .nav-links a { font-size: 1.5rem; }
+    #modalBody { flex-direction: column; }
+    #modalBody img { max-width: 100%; }
+}

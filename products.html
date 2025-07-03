@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Collection - Celia Handmade</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS Partagé et CSS de la Page -->
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="products.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.jpg" alt="Logo Celia Handmade" class="logo">
+            </a>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="products.html" class="active">Produits</a></li>
+                <li><a href="index.html#about">À Propos</a></li>
+                <li><a href="index.html#testimonials">Témoignages</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-cart fa-lg"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="products" id="products">
+            <h2 class="section-title">Notre Collection</h2>
+            <div class="product-filters">
+                <button class="filter-btn" data-category="all">Tous</button>
+                <button class="filter-btn" data-category="femme">Femme</button>
+                <button class="filter-btn" data-category="homme">Homme</button>
+                <button class="filter-btn" data-category="enfant">Enfant</button>
+                <button class="filter-btn" data-category="accessoires">Accessoires</button>
+            </div>
+            <div class="product-grid" id="productGrid">
+                <!-- La grille de produits sera remplie par JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="year"></span> Celia Handmade. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Éléments partagés (Panier, Modal, etc.) -->
+    <div class="overlay" id="overlay"></div>
+    <div class="cart-container" id="cart">
+        <div class="cart-header"><h3>Votre Panier</h3><button class="close-cart" id="closeCart">×</button></div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total:</span><span id="cartTotal">0 FCFA</span></div>
+            <div class="cart-buttons">
+                <button class="btn-secondary" id="clearCart">Vider</button>
+                <button class="btn-primary" id="checkoutWhatsapp">Commander</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="productModal">
+        <div class="modal-content"><span class="close-modal" id="closeModal">×</span><div id="modalBody"></div></div>
+    </div>
+    <div id="toast"></div>
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+    
+    <!-- JS Partagé et JS de la Page -->
+    <script src="common.js"></script>
+    <script src="products.js"></script>    
+</body>
+</html>
