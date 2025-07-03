@@ -88,7 +88,7 @@
 }
 .testimonial-card {
     background: white; padding: 2rem; border-radius: 15px;
-    box-shadow: var(--shadow); border-top: 4px solid var(--accent-color);
+    box-shadow: var(--shadow); border-top: 4px solid var(--primary-color);
 }
 .testimonial-card p { font-style: italic; margin-bottom: 1rem; }
 .testimonial-card span { font-weight: 600; color: var(--primary-color); }
@@ -101,7 +101,7 @@
 .contact-info, .contact-form-container { flex: 1; min-width: 300px; }
 .contact-info h3, .contact-form-container h3 { font-size: 1.8rem; margin-bottom: 1.5rem; }
 .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 1rem; }
-.contact-item i { color: var(--accent-color); font-size: 1.5rem; }
+.contact-item i { color: var(--primary-color); font-size: 1.5rem; }
 .contact-item a { text-decoration: none; color: var(--dark-color); transition: color 0.3s; }
 .contact-item a:hover { color: var(--accent-color); }
 .form-group { margin-bottom: 1rem; }
