@@ -5,6 +5,31 @@
     padding: 2rem 1rem;
     min-height: 70vh; /* Pour que le footer ne remonte pas trop vite */
 }
+
+.product-controls {
+    max-width: 500px;
+    margin: 0 auto 2rem;
+}
+.search-bar {
+    position: relative;
+}
+.search-bar input {
+    width: 100%;
+    padding: 12px 20px 12px 45px; /* Espace pour l'icône */
+    border: 1px solid var(--grey-color);
+    border-radius: 25px;
+    font-size: 1rem;
+    font-family: var(--font-body);
+}
+.search-bar .fa-search {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+
 .product-filters {
     display: flex;
     justify-content: center;

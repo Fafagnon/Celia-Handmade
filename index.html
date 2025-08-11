@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     
     <!-- CSS Partagé et CSS de la Page -->
     <link rel="stylesheet" href="common.css">
@@ -54,7 +55,7 @@
         </section>
 
         <!-- NOUVELLE SECTION CATEGORIES -->
-        <section class="categories" id="categories">
+        <section class="categories reveal-on-scroll" id="categories">
             <h2 class="section-title">Nos Catégories</h2>
             <div class="category-showcase">
                 <a href="products.html?category=femme" class="category-card">
@@ -76,34 +77,66 @@
             </div>
         </section>
 
-        <section class="about" id="about">
-            <div class="about-content">
-                <div class="about-img"><img src="images/boutique.jpeg" alt="L'atelier Celia Handmade"></div>
-                <div class="about-text">
-                    <h2 class="section-title">Notre Histoire</h2>
-                    <p>Fondée à Lomé en 2020, Celia Handmade est née d'une passion pour la mode durable et l'artisanat. Notre mission est de proposer des vêtements uniques et de qualité, conçus pour durer et raconter une histoire.</p>
-                    <p>Nous travaillons en étroite collaboration avec des artisans locaux, valorisant des savoir-faire uniques et des matières nobles comme le lin et le batik pour soutenir l'économie locale et réduire notre impact environnemental.</p>
+<section class="about" id="about">
+    <div class="about-content">
+        <div class="about-img-container">
+            <img src="images/boutique.jpeg" alt="L'atelier Celia Handmade">
+        </div>
+        <div class="about-text">
+            <h2 class="section-title">Notre Histoire</h2>
+            <p class="about-subtitle">De la passion du fil à l'amour du tissu.</p>
+            <p>Fondée à Lomé en 2020, Celia Handmade est née d'une vision : créer une mode durable qui raconte une histoire. Nous croyons en des vêtements qui ont une âme, conçus pour durer et pour être aimés.</p>
+            <p>En étroite collaboration avec des artisans locaux, nous valorisons des savoir-faire uniques et des matières nobles comme le lin et le batik pour soutenir l'économie locale et embellir votre quotidien.</p>
+            
+            <div class="about-values">
+                <div class="value-item">
+                    <i class="fas fa-hands-helping"></i>
+                    <h4>Artisanat Local</h4>
+                    <p>Chaque pièce soutient directement nos artisans partenaires.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Matières Nobles</h4>
+                    <p>Lin et batik sélectionnés pour leur qualité et leur durabilité.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
         
-        <section class="testimonials" id="testimonials">
-            <h2 class="section-title">Ce que nos clients disent</h2>
-            <div class="testimonial-container">
+<section class="testimonials" id="testimonials">
+    <h2 class="section-title">Ce que nos clients disent</h2>
+    <!-- Slider main container -->
+    <div class="swiper testimonial-slider">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
                 <div class="testimonial-card">
-                    <p>"Une qualité incroyable et des finitions parfaites. Ma robe en lin est devenue ma pièce préférée ! Je recommande à 100%."</p>
-                    <span>- Aïcha K.</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>"Enfin une boutique qui propose des vêtements pour homme stylés et éthiques à Lomé. La chemise en batik est superbe."</p>
-                    <span>- David A.</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>"Le service client est adorable et la livraison a été très rapide. On sent la passion derrière chaque création. Bravo Celia Handmade !"</p>
-                    <span>- Fati L.</span>
+                    <i class="fas fa-quote-left"></i>
+                    <p>Une qualité incroyable et des finitions parfaites. Ma robe en lin est devenue ma pièce préférée ! Je recommande à 100%.</p>
+                    <div class="author">- Aïcha K.</div>
                 </div>
             </div>
-        </section>
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>Enfin une boutique qui propose des vêtements pour homme stylés et éthiques à Lomé. La chemise en batik est superbe.</p>
+                    <div class="author">- David A.</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>Le service client est adorable et la livraison a été très rapide. On sent la passion derrière chaque création. Bravo Celia Handmade !</p>
+                    <div class="author">- Fati L.</div>
+                </div>
+            </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
 
         <section class="contact" id="contact">
             <h2 class="section-title">Contactez-Nous</h2>
@@ -130,9 +163,38 @@
         </section>
     </main>
 
-    <footer>
+<!-- NEW FOOTER -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column footer-about">
+            <img src="images/logo.jpg" alt="Logo Celia Handmade" class="footer-logo">
+            <p>L’élégance au naturel, le style fait main. Des pièces uniques façonnées avec passion à Lomé pour célébrer la beauté des tissus naturels.</p>
+        </div>
+        <div class="footer-column footer-links">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="products.html">Produits</a></li>
+                <li><a href="index.html#about">À Propos</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-column footer-contact">
+            <h4>Restons Connectés</h4>
+            <p>Hédzranawoé, Lomé, Togo</p>
+            <div class="footer-socials">
+                <a href="https://wa.me/22893122283" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:contact@celiahandmade.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.tiktok.com/@celia_handmade" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <!-- Ajoutez ici Instagram ou Facebook si vous les avez -->
+                <!-- <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a> -->
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
         <p>© <span id="year"></span> Celia Handmade. Tous droits réservés.</p>
-    </footer>
+    </div>
+</footer>
 
     <!-- Éléments partagés (Panier, Modal, etc.) -->
     <div class="overlay" id="overlay"></div>
@@ -156,5 +218,6 @@
     <!-- JS Partagé et JS de la Page -->
     <script src="common.js"></script>
     <script src="index.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>

@@ -203,3 +203,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialisation
     updateCart();
 });
+
+// --- LOGIQUE POUR L'ANIMATION AU SCROLL ---
+const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // Optionnel : arrêter d'observer l'élément une fois qu'il est visible
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.1 // L'élément est considéré visible quand 10% est à l'écran
+});
+
+revealElements.forEach(el => {
+    observer.observe(el);
+});

@@ -2,6 +2,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Le fichier index.js peut rester vide pour le moment.
     // Toute la logique partagée (panier, menu, etc.) est dans common.js.
     // On pourrait ajouter ici des animations spécifiques à la page d'accueil si besoin.
+
+        // --- INITIALISATION DU SLIDER DE TÉMOIGNAGES ---
+ if (document.querySelector('.testimonial-slider')) {
+const swiper = new swiper('.testimonial-slider', {
+    // Options
+    loop: true,
+    autoplay: {
+        delay: 5000, // Change de slide toutes les 5 secondes
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    spaceBetween: 30, // Espace entre les slides
+});
+
+}
     
     // Exemple : gestion du formulaire de contact qui est sur la page d'accueil
     const contactForm = document.getElementById('contactForm');
@@ -24,4 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             contactForm.reset();
         });
     }
+
+
 });
+

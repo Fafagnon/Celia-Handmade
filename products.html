@@ -47,6 +47,15 @@
     <main>
         <section class="products" id="products">
             <h2 class="section-title">Notre Collection</h2>
+
+            <div class="product-controls">
+                 <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Rechercher un article...">
+                    <i class="fas fa-search"></i>
+                 </div>
+            </div>
+
+
             <div class="product-filters">
                 <button class="filter-btn" data-category="all">Tous</button>
                 <button class="filter-btn" data-category="femme">Femme</button>
@@ -60,9 +69,38 @@
         </section>
     </main>
 
-    <footer>
+<!-- NEW FOOTER -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column footer-about">
+            <img src="images/logo.jpg" alt="Logo Celia Handmade" class="footer-logo">
+            <p>L’élégance au naturel, le style fait main. Des pièces uniques façonnées avec passion à Lomé pour célébrer la beauté des tissus naturels.</p>
+        </div>
+        <div class="footer-column footer-links">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="products.html">Produits</a></li>
+                <li><a href="index.html#about">À Propos</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-column footer-contact">
+            <h4>Restons Connectés</h4>
+            <p>Hédzranawoé, Lomé, Togo</p>
+            <div class="footer-socials">
+                <a href="https://wa.me/22893122283" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:contact@celiahandmade.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.tiktok.com/@celia_handmade" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <!-- Ajoutez ici Instagram ou Facebook si vous les avez -->
+                <!-- <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a> -->
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
         <p>© <span id="year"></span> Celia Handmade. Tous droits réservés.</p>
-    </footer>
+    </div>
+</footer>
 
     <!-- Éléments partagés (Panier, Modal, etc.) -->
     <div class="overlay" id="overlay"></div>
