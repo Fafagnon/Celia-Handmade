@@ -5,21 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- INITIALISATION DU SLIDER DE TÉMOIGNAGES ---
  if (document.querySelector('.testimonial-slider')) {
-const swiper = new swiper('.testimonial-slider', {
-    // Options
-    loop: true,
-    autoplay: {
-        delay: 5000, // Change de slide toutes les 5 secondes
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    spaceBetween: 30, // Espace entre les slides
+const testimonialSwiper = new Swiper('.testimonial-slider', {
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 20,
+  grabCursor: true,
+  // autoplay: { delay: 5000, disableOnInteraction: false }, // -> commenter/supprimer pour navigation manuelle uniquement
+  pagination: { el: '.swiper-pagination', clickable: true },
+  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+  keyboard: { enabled: true, onlyInViewport: true },
+  breakpoints: { 768: { slidesPerView: 2, spaceBetween: 30 } }
 });
-
 }
+
     
     // Exemple : gestion du formulaire de contact qui est sur la page d'accueil
     const contactForm = document.getElementById('contactForm');
@@ -42,7 +40,6 @@ const swiper = new swiper('.testimonial-slider', {
             contactForm.reset();
         });
     }
-
 
 });
 

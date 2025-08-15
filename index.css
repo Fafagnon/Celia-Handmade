@@ -199,6 +199,8 @@
     font-family: var(--font-headings);
     font-size: 1.2rem;
 }
+
+
 /* Customisation des puces de pagination Swiper */
 .swiper-pagination-bullet {
     background-color: var(--primary-color);
@@ -210,6 +212,17 @@
     background-color: var(--accent-color);
     opacity: 1;
 }
+.swiper-button-prev,
+.swiper-button-next {
+    color: #333; /* couleur des flèches */
+    transition: color 0.3s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    color: #000; /* couleur au survol */
+}
+
 
 .contact { padding: 4rem 1rem; background-color: white; }
 .contact-wrapper {
